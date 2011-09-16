@@ -4,7 +4,7 @@ module Machinist::ActiveRecord
     # Make and save an object.
     def make!(attributes = {})
       object = make(attributes)
-      object.save!
+      object.save_without_session_maintenance
       object.reload
     end
 
